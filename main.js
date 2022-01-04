@@ -4,7 +4,7 @@ require('dotenv').config();
 (async () => {
     const ithelp_url = process.env.ITHELP_URL || "https://google.com/"
     const browser = await puppeteer.launch({
-        headless: process.env.headless == "false" ? false : true,
+        headless: process.env.HEADLESS == "false" ? false : true,
     });
 
     let total_likes = 0

@@ -1,4 +1,4 @@
-# 計算 IT 邦幫忙自己所有文章的瀏覽/Like/留言總數的工具
+# 計算自己 IT 邦幫忙所有文章的瀏覽/Like/留言總數的工具
 
 我想應該有許多 IT 邦幫忙的作者都很關心自己文章的瀏覽數，像筆者就是一個喜歡三不五時去看看自己文章增加多少瀏覽量的人；剛好有其他創作者提出了一個需求，他希望可以用工具取得自己所有文章的瀏覽/Like/留言總數。
 
@@ -13,7 +13,7 @@
   (async () => {
     const ithelp_url = process.env.ITHELP_URL || "https://google.com/";
     const browser = await puppeteer.launch({
-      headless: process.env.headless == "false" ? false : true,
+      headless: process.env.HEADLESS == "false" ? false : true,
     });
 
     let total_likes = 0;
@@ -57,11 +57,16 @@
   headless=false
   ```
 
-大家也可以到筆者的 [Gihub](https://github.com/dean9703111/ithelp_total_count) 直接把專案 Clone 下來執行
-
-專案的使用方式很簡單，就是去「.env」裡面把「ITHELP_URL」改成自己的網址就好，下面是用筆者在 IT 邦幫忙文章網址的 Demo：
+大家也可以到筆者的 [Gihub](https://github.com/dean9703111/ithelp_total_count) 直接把專案 Clone 下來執行，下面是用筆者在 IT 邦幫忙文章網址的 Demo：
 
 - 使用鐵人賽文章網址：https://ithelp.ithome.com.tw/users/20103256/ironman/4227
   ![image](./img/ironman.png)
 - 使用個人文章網址：https://ithelp.ithome.com.tw/users/20103256/articles
   ![image](./img/articles.png)
+
+### 專案使用提醒：
+
+- 去「.env」裡面把「ITHELP_URL」改成自己的網址
+- 如果你想要看到瀏覽器彈出來，去「.env」裡面把「HEADLESS」改成 false
+- 記得先在終端機輸入`yarn`將套件安裝
+- 在終端機輸入`yarn start`即可執行
