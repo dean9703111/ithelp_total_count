@@ -54,7 +54,7 @@
   # 填上自己想要爬蟲的頁面，下面是筆者個人的文章頁面喔
   ITHELP_URL=https://ithelp.ithome.com.tw/users/20103256/articles
   # 預設不開啟瀏覽器，如果你想開啟就改成false
-  headless=false
+  HEADLESS=false
   ```
 
 大家也可以到筆者的 [Gihub](https://github.com/dean9703111/ithelp_total_count) 直接把專案 Clone 下來執行，下面是用筆者在 IT 邦幫忙文章網址的 Demo：
