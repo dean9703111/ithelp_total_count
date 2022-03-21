@@ -14,6 +14,8 @@ require('dotenv').config();
     //end = false時while迴圈會中斷
     let end = true
     const page = await browser.newPage();
+    const tablet = puppeteer.devices['iPad landscape']
+    await page.emulate(tablet)
     while (end) {
         p == 0 ? await page.goto(ithelp_url) : await page.goto(ithelp_url + `?page=` + p);
         await page.waitForSelector('.profile-header__name')
